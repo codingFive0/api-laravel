@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('account-data/{id}', "Api\\AccountController@index");
+Route::post('account-login', "Api\\AccountController@login");
+Route::post('account-add-credit', "Api\\AccountController@addCredit");
+Route::post('account-remove-credit', "Api\\AccountController@removeCredit");
